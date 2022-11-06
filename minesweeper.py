@@ -159,6 +159,7 @@ class Board:
             string_rep += f'{i} |'
             cells = []
             for idx, col in enumerate(row):
+                col = '\033[91m*\033[0m' if col == '*' else col    # red bombs
                 # string formatting using % - alignment
                 format = '%-' + str(widths[idx]) + "s"
                 cells.append(format % (col))
